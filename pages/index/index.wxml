@@ -6,13 +6,8 @@
       <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
       <text class="userinfo-nickname">{{userInfo.nickName}}</text>
     </block>
-  </view>
+  </view> 
   <view class="usermotto">
-    <button bindtap="generateExpression">生成算式</button>
-    <form bindsubmit="formSubmit" bindreset="formReset">
-      <text class="user-motto">{{motto}}</text>
-      <input name="test" type="number" placeholder="请输入答案" value="{{formvalue}}" confirm-type="done"></input>
-      <button formType="submit">提交结果</button>
-    </form>
+    <button class="btnmotto" bindtap="StartCompute">开始口算</button>
   </view>
 </view>

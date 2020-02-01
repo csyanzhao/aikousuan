@@ -3,11 +3,7 @@
 const app = getApp()
 
 Page({
-  data: {
-    motto: '',
-    result: '',
-    formvalue: '',
-    userInfo: {},
+  data: {    
     hasUserInfo: false,
     canIUse: wx.canIUse('button.open-type.getUserInfo')
   },
@@ -52,42 +48,11 @@ Page({
       userInfo: e.detail.userInfo,
       hasUserInfo: true
     })
-  },
-  generateExpression: function(){
-    this.setData({ formvalue: '', suc: ''})
-    var r1 = Math.round(Math.random() * 10)
-    var r2 = Math.round(Math.random() * 10)
-    var r3 = Math.round(Math.random() * 10)
-    var r4 = r1+r2+r3
-    this.setData({
-      motto: r1.toString() + " + " + r2.toString() + " + " + r3.toString() + "= ？",
-      result: r4.toString()
-    }) 
-  },
-  formSubmit: function(e){  
-    if (e.detail.value.test=="")
-    {
-      wx.showToast({
-        title: '结果不能为空！', // 标题
-        icon: 'none',  // 图标类型，默认success
-        duration: 1500  // 提示窗停留时间，默认1500ms
-      })
-    }else
-    {
-      if (this.data.result == e.detail.value.test) {
-        wx.showToast({
-          title: '真棒！答对了！', // 标题
-          icon: 'success',  // 图标类型，默认success
-          duration: 1500  // 提示窗停留时间，默认1500ms
-        })
-      } else {
-        wx.showToast({
-          title: '答错啦！正确答案是：' + this.data.result+'继续努力哦！', // 标题
-          icon: 'none',  // 图标类型，默认success
-          duration: 1500  // 提示窗停留时间，默认1500ms
-        })
-      }
-    }
-    
+  } ,
+  StartCompute: function(){
+    wx.redirectTo({
+      url: '../Compute/StartCompute',
+    })
   }
+
 })

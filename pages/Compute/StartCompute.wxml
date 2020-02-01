@@ -1,0 +1,31 @@
+<!--pages/Compute/StartCompute.wxml-->
+<!--StartCompute.wxml-->
+<view class="container">
+<view class="points-result">
+  <text>已出题数：{{QCount}}</text>
+  <text>已答题数：{{SubmitCount}}</text>
+  <text>得分：{{Points}} (每题10分)</text>
+  <text>回答用时：{{UsedTime}}秒</text>
+</view>
+  <text>倒计时</text>
+  <view class='countDown'><text style='color:red'>{{countDownNum}}</text>s</view>
+  <view class="points-result">
+    <form bindsubmit="formSubmit" bindreset="formReset">
+      <view class="usermotto">
+        <text>{{motto}}</text>
+        <input name="test" type="number" placeholder="请输入答案" value="{{formvalue}}" focus="{{true}}" confirm-type="发送"></input>
+      </view>
+      <view class="btnarea">
+        <button  class="btnmotto" formType="submit" disabled="{{btn_submit}}">提交结果</button>
+        <button  class="btnmotto" bindtap="RestartCompute">重新开始</button>
+      </view>
+      
+    </form>
+    
+  </view>
+  <text class="points-result">已答题列表</text>
+  <view class="points-result" wx:for="{{answeredQ}}">
+    第{{item.seq}}题：<text>{{item.question}}你的答案：{{item.useranswer}} {{item.result}}</text>
+  </view>
+</view>
+

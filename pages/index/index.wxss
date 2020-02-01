@@ -18,5 +18,11 @@
 
 .usermotto {
   margin-top: 50px;
-  color: rgba(12, 245, 90, 0.932);
+  color: rgba(240, 14, 14, 0.932);
+  background-color:#d0e4fe;
+  font-size:100%;
+}
+
+.btnmotto{
+  background-color: #4CAF50;
 }
